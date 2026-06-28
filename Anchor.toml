@@ -1,0 +1,22 @@
+skip_local_validator = true
+
+[toolchain]
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+solana_counter = "4XbSb17wfoEDD6RKhKu9V3rjwvvpqJqeDwBRvxjJyziP"
+
+[programs.devnet]
+solana_counter = "4XbSb17wfoEDD6RKhKu9V3rjwvvpqJqeDwBRvxjJyziP"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo test"
+
+[hooks]

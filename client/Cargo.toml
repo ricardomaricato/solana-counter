@@ -1,0 +1,18 @@
+[package]
+name = "interact"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "interact"
+path = "src/main.rs"
+
+[dependencies]
+anchor-lang = "1.1.2"
+solana-keypair = "3.0.1"
+solana-message = "3.0.1"
+solana-rpc-client = "3.0.1"
+solana-signer = "3.0.0"
+solana-transaction = "3.0.2"
+solana-counter = { path = "../programs/solana-counter", features = ["no-entrypoint"] }
