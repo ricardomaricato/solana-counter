@@ -13,7 +13,8 @@ fn main() {
     let client = RpcClient::new("https://api.devnet.solana.com".to_string());
 
     let home = std::env::var("HOME").expect("HOME not set");
-    let wallet_path = format!("{}/.config/solana/id.json", home);
+    let wallet_path = std::env::var("ANCHOR_WALLET")
+        .unwrap_or_else(|_| format!("{}/.config/solana/id.json", home));
     let payer = read_keypair_file(&wallet_path).expect("failed to read wallet keypair");
 
     let program_id = solana_counter::id();
