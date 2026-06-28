@@ -1,0 +1,9 @@
+{
+  "name": "solana-counter-interact",
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@solana/web3.js": "^1.98.2"
+  }
+}

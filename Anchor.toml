@@ -14,7 +14,7 @@ solana_counter = "4XbSb17wfoEDD6RKhKu9V3rjwvvpqJqeDwBRvxjJyziP"
 
 [provider]
 cluster = "devnet"
-wallet = "~/.config/solana/id.json"
+wallet = "~/workspaces/ws-personal/wallet.json"
 
 [scripts]
 test = "cargo test"

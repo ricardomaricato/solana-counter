@@ -10,11 +10,13 @@ use solana_signer::Signer;
 use solana_transaction::versioned::VersionedTransaction;
 
 fn main() {
-    let client = RpcClient::new("https://api.devnet.solana.com".to_string());
+    let rpc_url = std::env::var("SOLANA_RPC_URL")
+        .unwrap_or_else(|_| "https://api.devnet.solana.com".to_string());
+    let client = RpcClient::new(rpc_url);
 
     let home = std::env::var("HOME").expect("HOME not set");
     let wallet_path = std::env::var("ANCHOR_WALLET")
-        .unwrap_or_else(|_| format!("{}/.config/solana/id.json", home));
+        .unwrap_or_else(|_| format!("{}/workspaces/ws-personal/wallet.json", home));
     let payer = read_keypair_file(&wallet_path).expect("failed to read wallet keypair");
 
     let program_id = solana_counter::id();
